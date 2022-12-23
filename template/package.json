@@ -17,7 +17,15 @@
     "postinstall": "bash ./scripts/post-install.sh",
     "reverse": "adb reverse tcp:8081 tcp:8081",
     "generateimages": "node scripts/genimg src/assets/images --output src/themes/image.js --name Images",
-    "generatefonts": "node scripts/fonts"
+    "generatefonts": "node scripts/fonts",
+    "build-local": "cd ios && fastlane build env:local",
+    "build-staging": "cd ios && fastlane build env:staging",
+    "build-preprod": "cd ios && fastlane build env:preprod",
+    "build-production": "cd ios && fastlane build env:production",
+    "push-local": "bash ./scripts/codepush.sh Local",
+    "push-staging": "bash ./scripts/codepush.sh Staging",
+    "push-preprod": "bash ./scripts/codepush.sh PreProd",
+    "push-prod": "bash ./scripts/codepush.sh Production"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.13",
